@@ -5,7 +5,10 @@ class HomeIfpi extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
+      extendBodyBehindAppBar: true,
       endDrawer: Drawer(
         backgroundColor: Colors.black,
         child: ListView(
@@ -37,11 +40,33 @@ class HomeIfpi extends StatelessWidget {
         ),
       ),
       appBar: AppBar(
-          //backgroundColor: Colors.transparent,
-          ),
+        elevation: 0.0,
+        backgroundColor: Colors.transparent,
+      ),
       body: Column(
-        children: const [],
+        children: [
+          Container(
+            height: screenHeight * .4,
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 61, 65, 71),
+              image: DecorationImage(
+                image: const AssetImage(
+                  'assets/images/img-banner.jpg',
+                ),
+                fit: BoxFit.fill,
+                colorFilter: ColorFilter.mode(
+                  Colors.black.withOpacity(0.6),
+                  BlendMode.dstATop,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
+  }
+
+  Widget Sobre() {
+    return Column();
   }
 }
