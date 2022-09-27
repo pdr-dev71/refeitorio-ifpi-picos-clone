@@ -19,22 +19,30 @@ class HomeIfpi extends StatelessWidget {
               title: const Text(
                 'Sobre',
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushNamed('About');
+              },
             ),
             ListTile(
               textColor: Colors.white,
               title: const Text('Cardápio'),
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushNamed('Menu');
+              },
             ),
             ListTile(
               textColor: Colors.white,
               title: const Text('Cadastre-se'),
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushNamed('Register');
+              },
             ),
             ListTile(
               textColor: Colors.white,
               title: const Text('Login'),
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushNamed('Login');
+              },
             ),
           ],
         ),
@@ -78,12 +86,9 @@ class HomeIfpi extends StatelessWidget {
               ),
             ],
           ),
+          //const About(),
         ],
       ),
     );
-  }
-
-  Widget Sobre() {
-    return Column();
   }
 }
