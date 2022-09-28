@@ -84,7 +84,10 @@ class LoginPage extends StatelessWidget {
                                   horizontal: 12, vertical: 20),
                               child: TextButton(
                                 onPressed: () {
-                                  Navigator.of(context).pushNamed('Recover');
+                                  Navigator.pushReplacementNamed(
+                                    context,
+                                    'Recover',
+                                  );
                                 },
                                 child: const Text(
                                   'Esqueci minha senha',

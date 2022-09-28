@@ -9,8 +9,82 @@ class ControlPanel extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
+      drawer: Drawer(
+        backgroundColor: Colors.grey[850],
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.grey[850],
+              ),
+              child: Row(
+                children: const [
+                  CircleAvatar(
+                    radius: 50,
+                    backgroundImage: NetworkImage(
+                        'https://www.mundoecologia.com.br/wp-content/uploads/2020/01/Jegue-de-Boca-Aberta-e1579267809814.jpg'),
+                  ),
+                  SizedBox(width: 15),
+                  Text(
+                    '20191TADS0202',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.white,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            ListTile(
+              horizontalTitleGap: 0.2,
+              leading: const Icon(
+                Icons.speed,
+                color: Colors.white,
+                size: 28,
+              ),
+              title: const Text(
+                'Painel de controle',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                ),
+              ),
+              onTap: () {},
+            ),
+            ListTile(
+              horizontalTitleGap: 0.2,
+              trailing: const Icon(
+                Icons.chevron_right,
+                color: Colors.white,
+                size: 28,
+              ),
+              leading: const Icon(
+                Icons.description,
+                color: Colors.white,
+                size: 28,
+              ),
+              title: const Text(
+                'Relatórios',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                ),
+              ),
+              onTap: () {},
+            ),
+          ],
+        ),
+      ),
       backgroundColor: Colors.grey[350],
       appBar: AppBar(
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(Icons.menu),
+            onPressed: () => Scaffold.of(context).openDrawer(),
+          ),
+        ),
+        automaticallyImplyLeading: false,
         actions: const [
           Padding(
             padding: EdgeInsets.all(8.0),
