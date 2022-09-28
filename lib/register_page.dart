@@ -113,9 +113,10 @@ class RegisterPage extends StatelessWidget {
                               ),
                             ),
                             ElevatedButton.icon(
-                                onPressed: () {},
-                                icon: const Icon(Icons.check),
-                                label: const Text('Salvar')),
+                              onPressed: () {},
+                              icon: const Icon(Icons.check),
+                              label: const Text('Salvar'),
+                            ),
                           ],
                         ),
                       ),
