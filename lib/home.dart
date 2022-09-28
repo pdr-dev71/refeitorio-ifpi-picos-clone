@@ -51,42 +51,37 @@ class HomeIfpi extends StatelessWidget {
         elevation: 0.0,
         backgroundColor: Colors.transparent,
       ),
-      body: Column(
+      body: Stack(
+        alignment: Alignment.center,
         children: [
-          Stack(
-            alignment: Alignment.center,
+          Column(
             children: [
-              Column(
-                children: [
-                  Container(
-                    height: screenHeight * .4,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 61, 65, 71),
-                      image: DecorationImage(
-                        image: const AssetImage(
-                          'assets/images/img-banner.jpg',
-                        ),
-                        fit: BoxFit.fill,
-                        colorFilter: ColorFilter.mode(
-                          Colors.black.withOpacity(0.6),
-                          BlendMode.dstATop,
-                        ),
-                      ),
+              Container(
+                height: screenHeight,
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 61, 65, 71),
+                  image: DecorationImage(
+                    image: const AssetImage(
+                      'assets/images/img-banner.jpg',
+                    ),
+                    fit: BoxFit.cover,
+                    colorFilter: ColorFilter.mode(
+                      Colors.black.withOpacity(0.6),
+                      BlendMode.dstATop,
                     ),
                   ),
-                ],
-              ),
-              const Text(
-                'Restaurante - Mambee',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
-                  color: Color(0xFFffb03b),
                 ),
               ),
             ],
           ),
-          //const About(),
+          const Text(
+            'Restaurante - Mambee',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 30,
+              color: Color(0xFFffb03b),
+            ),
+          ),
         ],
       ),
     );
