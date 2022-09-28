@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:refeitorio_ifpi_picos_clone/about_page.dart';
+import 'package:refeitorio_ifpi_picos_clone/auth/login_page.dart';
+import 'package:refeitorio_ifpi_picos_clone/auth/recover_password_page.dart';
+import 'package:refeitorio_ifpi_picos_clone/auth/register_page.dart';
+import 'package:refeitorio_ifpi_picos_clone/control_panel.dart';
 import 'package:refeitorio_ifpi_picos_clone/home.dart';
-import 'package:refeitorio_ifpi_picos_clone/login_page.dart';
 import 'package:refeitorio_ifpi_picos_clone/menu_page.dart';
-import 'package:refeitorio_ifpi_picos_clone/recover_password_page.dart';
-import 'package:refeitorio_ifpi_picos_clone/register_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
         'Login': ((context) => const LoginPage()),
         'Menu': ((context) => const Menu()),
         'About': ((context) => const About()),
-        'Recover': ((context) => const RecoverPassword())
+        'Recover': ((context) => const RecoverPassword()),
+        'Panel': ((context) => const ControlPanel())
       },
       theme: ThemeData(
         primarySwatch: Palette.ThemeColorApplication,

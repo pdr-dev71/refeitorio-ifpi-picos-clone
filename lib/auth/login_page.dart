@@ -73,7 +73,9 @@ class LoginPage extends StatelessWidget {
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                     primary: const Color(0xFF007065)),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.of(context).pushNamed('Panel');
+                                },
                                 child: const Text('Login'),
                               ),
                             ),
