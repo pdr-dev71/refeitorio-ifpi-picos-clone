@@ -85,10 +85,91 @@ class ControlPanel extends StatelessWidget {
           ),
         ),
         automaticallyImplyLeading: false,
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Icon(Icons.person),
+            padding: const EdgeInsets.all(8.0),
+            child: IconButton(
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  barrierDismissible: false,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: Padding(
+                        padding: const EdgeInsets.fromLTRB(5, 10, 10, 5),
+                        child: Row(
+                          children: const [
+                            Icon(
+                              Icons.person,
+                              size: 28,
+                            ),
+                            SizedBox(width: 10),
+                            Text(
+                              'Perfil',
+                              style: TextStyle(
+                                fontSize: 16,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      content: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(8, 10, 10, 10),
+                            child: Row(
+                              children: const [
+                                Icon(
+                                  Icons.logout,
+                                  size: 28,
+                                  color: Colors.red,
+                                ),
+                                SizedBox(width: 10),
+                                Text(
+                                  'Sair',
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                    color: Colors.red,
+                                    fontSize: 16,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      actions: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            ElevatedButton.icon(
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.red,
+                              ),
+                              label: const Text('Sair'),
+                              icon: const Icon(Icons.close),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                            ElevatedButton.icon(
+                              label: const Text('Ok'),
+                              icon: const Icon(Icons.done),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                          ],
+                        )
+                      ],
+                    );
+                  },
+                );
+              },
+              icon: const Icon(Icons.person),
+            ),
           )
         ],
         centerTitle: true,
