@@ -1,9 +1,7 @@
-// ignore_for_file: sized_box_for_whitespace
-
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class RecoverPassword extends StatelessWidget {
+  const RecoverPassword({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,20 +16,20 @@ class LoginPage extends StatelessWidget {
             children: [
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                 child: Card(
-                  child: Container(
-                    width: screenWith * .8,
-                    height: screenHeight * .4,
+                  child: SizedBox(
+                    width: screenWith * .9,
+                    height: screenHeight * .5,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
-                            'Login',
+                            'Recuperação de senha',
                             style: TextStyle(
-                              fontSize: 25,
+                              fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -42,9 +40,8 @@ class LoginPage extends StatelessWidget {
                             children: [
                               TextFormField(
                                 decoration: const InputDecoration(
-                                  label: Text('E-mail/Matricula'),
-                                  hintText:
-                                      'Informe seu email ou matricula do curso',
+                                  label: Text('Matricula'),
+                                  hintText: 'Informe sua matricula',
                                   border: OutlineInputBorder(),
                                 ),
                               ),
@@ -57,8 +54,22 @@ class LoginPage extends StatelessWidget {
                             children: [
                               TextFormField(
                                 decoration: const InputDecoration(
-                                  label: Text('Senha'),
-                                  hintText: 'Informe a sua senha',
+                                  label: Text('E-mail'),
+                                  hintText: 'Informe seu email',
+                                  border: OutlineInputBorder(),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 30),
+                          child: Column(
+                            children: [
+                              TextFormField(
+                                decoration: const InputDecoration(
+                                  label: Text('Nova Senha'),
+                                  hintText: 'Informe a senha nova',
                                   border: OutlineInputBorder(),
                                 ),
                               ),
@@ -66,32 +77,19 @@ class LoginPage extends StatelessWidget {
                           ),
                         ),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Padding(
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 30, vertical: 20),
-                              child: ElevatedButton(
+                              child: ElevatedButton.icon(
                                 style: ElevatedButton.styleFrom(
                                     primary: const Color(0xFF007065)),
                                 onPressed: () {},
-                                child: const Text('Login'),
+                                label: const Text('Salvar'),
+                                icon: const Icon(Icons.check),
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 12, vertical: 20),
-                              child: TextButton(
-                                onPressed: () {
-                                  Navigator.of(context).pushNamed('Recover');
-                                },
-                                child: const Text(
-                                  'Esqueci minha senha',
-                                  style: TextStyle(
-                                    color: Color(0xFF007065),
-                                  ),
-                                ),
-                              ),
-                            )
                           ],
                         ),
                       ],
